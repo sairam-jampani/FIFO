@@ -80,13 +80,8 @@ The testbench systematically applies scenarios to verify pointer arithmetic and 
 ### RTL Schematic
 <img width="1920" height="1080" alt="Schematic" src="https://github.com/user-attachments/assets/aca42c3b-7c8b-4531-857c-47f6f8323733" />
 
-
 ### Waveform Analysis
 <img width="1920" height="1080" alt="Simulation" src="https://github.com/user-attachments/assets/024f5e21-425d-4433-9015-005d2aea2715" />
-
-### TCL console
-<img width="1560" height="358" alt="TCLconsole" src="https://github.com/user-attachments/assets/758bf98d-d3d9-4f96-af22-5b093907b90f" />
-
 
 **Understanding the Waveform:**
 The simulation waveform visually confirms the FIFO's memory management and state flags synchronized to the clock. 
@@ -95,6 +90,14 @@ The simulation waveform visually confirms the FIFO's memory management and state
 * **`full` & `empty`:** Status flags preventing data corruption.
 
 *Example:* As shown in the simulation, when the FIFO is subjected to consecutive writes without any reads, the internal `wr_ptr` increments until it catches up to the `rd_ptr`. At this exact clock cycle, the `full` flag transitions to `1`, and any subsequent `wr_en` commands are safely ignored by the hardware.
+
+### TCL Console Output
+<img width="1560" height="358" alt="TCLconsole" src="https://github.com/user-attachments/assets/758bf98d-d3d9-4f96-af22-5b093907b90f" />
+
+**Understanding the TCL Console:**
+The Vivado TCL console captures the real-time execution logs of the SystemVerilog testbench during simulation.
+* **Verification Logs:** Displays the output of `$display` or `$monitor` statements used in the testbench to track specific data transactions.
+* **Automated Status:** Provides a clear, text-based validation of edge cases (like overflow and underflow) without needing to manually count clock cycles in the waveform.
 
 ---
 
