@@ -78,10 +78,15 @@ The testbench systematically applies scenarios to verify pointer arithmetic and 
 **All corner cases were successfully verified through behavioral simulation.**
 
 ### RTL Schematic
-![RTL Schematic](schematic.png)
+<img width="1920" height="1080" alt="Schematic" src="https://github.com/user-attachments/assets/aca42c3b-7c8b-4531-857c-47f6f8323733" />
+
 
 ### Waveform Analysis
-![Simulation Waveform](waveform.png)
+<img width="1920" height="1080" alt="Simulation" src="https://github.com/user-attachments/assets/024f5e21-425d-4433-9015-005d2aea2715" />
+
+### TCL console
+<img width="1560" height="358" alt="TCLconsole" src="https://github.com/user-attachments/assets/758bf98d-d3d9-4f96-af22-5b093907b90f" />
+
 
 **Understanding the Waveform:**
 The simulation waveform visually confirms the FIFO's memory management and state flags synchronized to the clock. 
