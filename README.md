@@ -1,7 +1,8 @@
 # Synchronous FIFO Design & Verification
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Language-SystemVerilog-blue.svg" alt="Language">
+  <img src="https://img.shields.io/badge/Design-Verilog-blue.svg" alt="Design Language">
+  <img src="https://img.shields.io/badge/Verification-SystemVerilog-blueviolet.svg" alt="Verification Language">
   <img src="https://img.shields.io/badge/Tool-Xilinx%20Vivado%202020.1-orange.svg" alt="Tool">
   <img src="https://img.shields.io/badge/Design%20Flow-Front--End-brightgreen.svg" alt="Flow">
 </p>
@@ -9,7 +10,7 @@
 ---
 
 ## 📖 Project Description
-This project implements and verifies a Synchronous First-In-First-Out (FIFO) memory buffer using SystemVerilog. FIFOs are critical components in digital systems, used for data buffering, flow control, and safely crossing clock domains. This repository focuses heavily on the verification aspect, ensuring the FIFO behaves correctly under various corner cases like memory overflow (writing when full) and underflow (reading when empty).
+This project implements and verifies a Synchronous First-In-First-Out (FIFO) memory buffer. The core hardware module is designed in **Verilog HDL**, while the robust verification environment is built using **SystemVerilog**. FIFOs are critical components in digital systems, used for data buffering, flow control, and safely crossing clock domains. This repository focuses heavily on the verification aspect, ensuring the FIFO behaves correctly under various corner cases like memory overflow (writing when full) and underflow (reading when empty).
 
 ---
 
@@ -41,21 +42,22 @@ The FIFO design includes circular pointer logic and essential status flags to ma
 
 ## 📂 Project Files
 
-* **`fifo.sv`** → Synchronous FIFO Design Module
-* **`fifo_tb.sv`** → Comprehensive Testbench for Verification
+* **`fifo.v`** → Synchronous FIFO Design Module (Verilog)
+* **`fifo_tb.sv`** → Comprehensive Testbench for Verification (SystemVerilog)
 
 ---
 
 ## 🛠️ Tools Used
-* **Verilog HDL / SystemVerilog**
+* **Verilog HDL** (Design)
+* **SystemVerilog** (Verification)
 * **Xilinx Vivado 2020.1**
 * **Behavioral Simulation** (Vivado XSim)
 
 ---
 
 ## 🔄 Design & Verification Flow
-1. **Design Code (RTL):** Development of the memory array, pointer logic, and flag evaluation conditions.
-2. **Testbench Code:** Creation of a robust verification environment that injects constrained and edge-case stimuli.
+1. **Design Code (RTL):** Development of the memory array, pointer logic, and flag evaluation conditions using Verilog.
+2. **Testbench Code:** Creation of a robust verification environment in SystemVerilog that injects constrained and edge-case stimuli.
 3. **RTL Synthesis & Schematic:** Compiling the RTL code in Xilinx Vivado to generate a hardware schematic showing memory block allocation.
 4. **Simulation Waveform:** Executing the testbench to visualize memory writes, reads, and flag transitions over time.
 
@@ -92,9 +94,9 @@ The simulation waveform visually confirms the FIFO's memory management and state
 ---
 
 ## 🎯 Learning Objectives
-* Implementing circular buffer pointer logic in SystemVerilog.
+* Implementing circular buffer pointer logic in Verilog HDL.
 * Designing reliable state flags (`full`, `empty`) based on pointer comparison.
-* Developing verification testbenches focused on corner-case testing (overflow/underflow prevention).
+* Developing robust verification testbenches using SystemVerilog focused on corner-case testing (overflow/underflow prevention).
 * Generating, navigating, and analyzing RTL schematics and timing waveforms using the Xilinx Vivado Design Suite.
 
 ---
